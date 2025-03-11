@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Nhom10</string>
+    <string name="title_shop">Shop</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cart_fragment">CartFragment</string>
+    <string name="profile_fragment">ProfileFragment</string>
+    <string name="shop_fragment">ShopFragment</string>
+    <string name="home_fragment">HomeFragment</string>
+    <string name="favorite_fragment">FavoriteFragment</string>
+    <string name="men">Nam</string>
+    <string name="women">Nữ</string>
+    <string name="kid">Trẻ em</string>
+    <string name="Search">Tìm sản phẩm...</string>
+    <string name="Thanhtoan">Thanh toan</string>
+</resources>
