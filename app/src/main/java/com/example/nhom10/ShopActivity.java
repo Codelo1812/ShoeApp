@@ -27,12 +27,6 @@ public class ShopActivity extends AppCompatActivity implements UserAdapter.UserC
     }
     @Override
     public void onItemClick(String id){
-        Intent i = new Intent(this,DetailActivity.class);
-        i.putExtra("userId",id);
-        startActivity(i);
-    }
-    @Override
-    public void onItemCLick(String id){
         User selectedUser = null;
         for(User user : lstUser){
             if(user.getId().equals(id)){
@@ -48,6 +42,7 @@ public class ShopActivity extends AppCompatActivity implements UserAdapter.UserC
             startActivity(i);
         }
     }
+
     void LoadData(){
         lstUser = new ArrayList<>();
         lstUser.add(new User("1","Giay 1","1.jpg","2.500.000"));
