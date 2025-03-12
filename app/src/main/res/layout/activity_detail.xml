@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+    <ImageView
+        android:id="@+id/product_img"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"/>
+
+    <!--Mo ta san pham-->
+    <TextView
+        android:id="@+id/productDescrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="..."
+        android:textSize="16sp"
+        android:paddingTop="8dp"/>
+    <!--Chon kich thuoc giay-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chon kich thuoc giay"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingTop="16sp" />
+    <!--Hien thi kich thuoc giay-->
+    <RadioGroup
+        android:id="@+id/sizeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+        <RadioButton
+            android:id="@+id/size37"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="37"/>
+
+        <RadioButton
+            android:id="@+id/size38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="38"/>
+
+        <RadioButton
+            android:id="@+id/size39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="39"/>
+
+        <RadioButton
+            android:id="@+id/size40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40"/>
+
+        <RadioButton
+            android:id="@+id/size41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="41"/>
+
+        <RadioButton
+            android:id="@+id/size42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="42"/>
+
+    </RadioGroup>
+    <!--Nut them vao gio hang-->
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Them vao gio hang"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

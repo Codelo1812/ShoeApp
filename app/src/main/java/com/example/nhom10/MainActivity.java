@@ -32,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 else if (itemId == R.id.mnShop){
                     startActivity(new Intent(MainActivity.this, ShopActivity.class));
                 }
+                else if (itemId == R.id.mnFavorite){
+                    startActivity(new Intent(MainActivity.this, FavoriteActivity.class));
+                }
+                else if (itemId == R.id.mnBag){
+                    startActivity(new Intent(MainActivity.this, CartActivity.class));
+                }
+                else if (itemId == R.id.mnProfile){
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                }
                 return false;
             }
         });

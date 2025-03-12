@@ -14,8 +14,10 @@ import java.util.ArrayList;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
     ArrayList<User> lstUser;
     Context context;
-    public UserAdapter(ArrayList<User> lstUser){
+    UserCallback userCallback;
+    public UserAdapter(ArrayList<User> lstUser,UserCallback userCallback){
         this.lstUser = lstUser;
+        this.userCallback=userCallback;
     }
 
     //Ham gan layoutitem vao Adapter
@@ -35,6 +37,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         holder.imAvatar.setImageBitmap(Utils.convertToBitmapFromAssets(context, item.getAvatar()));
         holder.tvPrice.setText(item.getPrice());
         holder.tvName.setText(item.getName());
+        holder.itemView.setOnClickListener(view -> userCallback.onItemClick(item.getId()));
     }
     @Override
     public int getItemCount(){
@@ -51,5 +54,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             tvName = itemview.findViewById(R.id.name);
             tvPrice = itemview.findViewById(R.id.price);
         }
+    }
+    public interface UserCallback{
+        void onItemClick(String id);
     }
 }
