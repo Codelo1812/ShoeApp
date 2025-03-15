@@ -1,20 +1,19 @@
 package com.example.nhom10;
-
 public class CartItem {
+    private int id;
     private String name;
-    private double price;
     private int quantity;
-    private String imageUrl; // Thêm biến này để lưu ảnh sản phẩm
+    private double price;
 
-    public CartItem(String name, double price, int quantity, String imageUrl) {
+    public CartItem(int id, String name, int quantity, double price) {
+        this.id = id;
         this.name = name;
-        this.price = price;
         this.quantity = quantity;
-        this.imageUrl = imageUrl;
+        this.price = price;
     }
 
+    public int getId() { return id; }
     public String getName() { return name; }
-    public double getPrice() { return price; }
     public int getQuantity() { return quantity; }
-    public String getImageUrl() { return imageUrl; }
+    public double getPrice() { return price; }
 }

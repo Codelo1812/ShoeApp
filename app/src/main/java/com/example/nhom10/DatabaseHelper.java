@@ -9,12 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "cart.db";
     private static final int DATABASE_VERSION = 1;
-
     private static final String TABLE_CART = "cart";
-    private static final String COLUMN_ID = "id";
-    private static final String COLUMN_NAME = "name";
-    private static final String COLUMN_PRICE = "price";
-    private static final String COLUMN_QUANTITY = "quantity";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -22,11 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "CREATE TABLE " + TABLE_CART + " (" +
-                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NAME + " TEXT, " +
-                COLUMN_PRICE + " REAL, " +
-                COLUMN_QUANTITY + " INTEGER)";
+        String createTable = "CREATE TABLE " + TABLE_CART + " (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price REAL)";
         db.execSQL(createTable);
     }
 
@@ -36,18 +27,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addToCart(String name, double price, int quantity) {
+    public void addToCart(int id, String name, int quantity, double price) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME, name);
-        values.put(COLUMN_PRICE, price);
-        values.put(COLUMN_QUANTITY, quantity);
+        values.put("id", id);
+        values.put("name", name);
+        values.put("quantity", quantity);
+        values.put("price", price);
+
         db.insert(TABLE_CART, null, values);
         db.close();
     }
 
-    public Cursor getCartItems() {
+    public Cursor getAllCartItems() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM " + TABLE_CART, null);
+    }
+
+    public void updateQuantity(int id, int quantity) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("quantity", quantity);
+        db.update(TABLE_CART, values, "id=?", new String[]{String.valueOf(id)});
+        db.close();
+    }
+
+    public void removeFromCart(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_CART, "id=?", new String[]{String.valueOf(id)});
+        db.close();
+    }
+
+    public void clearCart() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_CART);
+        db.close();
     }
 }

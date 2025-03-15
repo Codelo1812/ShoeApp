@@ -6,14 +6,28 @@
     android:padding="16dp">
 
     <ListView
-        android:id="@+id/cart_list"
+        android:id="@+id/cart_list_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <Button
-        android:id="@+id/btn_checkout"
+    <TextView
+        android:id="@+id/total_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Thanhtoan"/>
+        android:text="Tổng tiền: 0 VND"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/checkout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thanh toán"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"/>
 </LinearLayout>
