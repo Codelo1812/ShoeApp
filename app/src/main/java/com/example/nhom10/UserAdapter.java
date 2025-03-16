@@ -35,10 +35,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder,int position){
         User item = lstUser.get(position);
-        holder.imAvatar.setImageBitmap(Utils.convertToBitmapFromAssets(context, item.getAvatar()));
-        holder.tvPrice.setText(item.getPrice());
-        holder.tvName.setText(item.getName());
-        holder.itemView.setOnClickListener(view -> userCallback.onItemClick(item.getId()));
     }
     @Override
     public int getItemCount(){
