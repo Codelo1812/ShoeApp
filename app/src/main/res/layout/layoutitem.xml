@@ -12,19 +12,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"/>
 
-    <!--Gia san pham-->
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginLeft="16dp"
-        android:text="price"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/blue"
-        android:textSize="20sp"/>
-
     <!-- Ten san pham-->
     <TextView
         android:id="@+id/name"
@@ -35,6 +22,31 @@
         android:text="name"
         android:layout_marginTop="5dp"
         android:textStyle="bold"
-        android:textColor="@color/blue"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+    <!-- Ten san pham-->
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="16dp"
+        android:text="description"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <!--Gia san pham-->
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="16dp"
+        android:text="price"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="20sp"/>
 </LinearLayout>

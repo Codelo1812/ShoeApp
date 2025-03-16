@@ -11,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ShopActivity extends AppCompatActivity implements UserAdapter.UserCallback {
+public class ShopActivity extends AppCompatActivity implements ProductAdapter.ProductCallback {
     RecyclerView rvListC;
-    ArrayList<User> lstUser;
-    UserAdapter userAdapter;
+    ArrayList<Product> lstProduct;
+    ProductAdapter productAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,38 +24,39 @@ public class ShopActivity extends AppCompatActivity implements UserAdapter.UserC
 
         LoadData();
 
-        userAdapter = new UserAdapter(lstUser,this);
+        productAdapter = new ProductAdapter(lstProduct,this);
         rvListC.setLayoutManager(new GridLayoutManager(this,2));
-        rvListC.setAdapter(userAdapter);
+        rvListC.setAdapter(productAdapter);
     }
     @Override
     public void onItemClick(String id){
-        User selectedUser = null;
-        for(User user : lstUser){
-            if(user.getId().equals(id)){
-                selectedUser = user;
+        Product selectedProduct = null;
+        for(Product product : lstProduct){
+            if(product.getId().equals(id)){
+                selectedProduct = product;
                 break;
             }
         }
-        if (selectedUser != null){
+        if (selectedProduct != null){
             Intent i =new Intent(this, DetailActivity.class);
-            i.putExtra("userPrice",selectedUser.getPrice());
-            i.putExtra("userName",selectedUser.getName());
-            i.putExtra("userAvatar",selectedUser.getAvatar());
+            i.putExtra("userPrice",selectedProduct.getPrice());
+            i.putExtra("userName",selectedProduct.getName());
+            i.putExtra("userAvatar",selectedProduct.getImage());
             startActivity(i);
         }
     }
 
     void LoadData(){
-        lstUser = new ArrayList<>();
-        lstUser.add(new User("1","Giay 1","1.jpg","2.500.000"));
-        lstUser.add(new User("2","Giay 2","2.jpg","2.500.000"));
-        lstUser.add(new User("3","Giay 3","3.jpg","2.500.000"));
-        lstUser.add(new User("4","Giay 4","4.jpg","2.500.000"));
-        lstUser.add(new User("5","Giay 5","5.jpg","2.500.000"));
-        lstUser.add(new User("6","Giay 6","6.jpg","2.500.000"));
-        lstUser.add(new User("8","Giay 8","8.jpg","2.500.000"));
-        lstUser.add(new User("9","Giay 9","9.jpg","2.500.000"));
-        lstUser.add(new User("10","Giay 10","10.jpg","2.500.000"));
+        lstProduct = new ArrayList<>();
+        lstProduct.add(new Product("1","Giay 1","...","2.500.000","1.jpg"));
+        lstProduct.add(new Product("2","Giay 2","...","2.500.000","2.jpg"));
+        lstProduct.add(new Product("3","Giay 3","...","2.500.000","3.jpg"));
+        lstProduct.add(new Product("4","Giay 4","...","2.500.000","4.jpg"));
+        lstProduct.add(new Product("5","Giay 5","...","2.500.000","5.jpg"));
+        lstProduct.add(new Product("6","Giay 6","...","2.500.000","6.jpg"));
+        lstProduct.add(new Product("7","Giay 7","...","2.500.000","7.jpg"));
+        lstProduct.add(new Product("8","Giay 8","...","2.500.000","8.jpg"));
+        lstProduct.add(new Product("9","Giay 9","...","2.500.000","9.jpg"));
+        lstProduct.add(new Product("10","Giay 10","...","2.500.000","10.jpg"));
     }
 }
