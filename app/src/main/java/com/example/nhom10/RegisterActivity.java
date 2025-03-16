@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-import com.example.demoapp.model.User;
+import com.example.nhom10.User;
 import com.google.gson.Gson;
 public class RegisterActivity extends AppCompatActivity {
     private EditText edUserNameC;
@@ -22,7 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     private ImageButton imbBack;
     private SharedPreferences.Editor editor;
     SharedPreferences sharedPreferences;
-    private final com.example.nhom10.Gson gson = new Gson();
+    private final Gson gson = new Gson();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

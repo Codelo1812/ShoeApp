@@ -8,45 +8,15 @@ public class User implements Serializable {
     private String email;
     private String phoneNumber;
     private int sex;
-    String id;
-    String name;
-    String avatar;
-    String price;
-    public User(String id,String name,String avatar,String price,String userName, String passWord, String email, String phoneNumber, int sex){
-        this.id = id;
-        this.name = name;
-        this.avatar = avatar;
-        this.price = price;
+    public User(){};
+    public User(String userName, String passWord, String email, String phoneNumber, int sex){
         this.userName = userName;
         this.passWord = passWord;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.sex = sex;
     }
-    public String getId(){
-        return id;
-    }
-    public void setId(String id){
-        this.id=id;
-    }
-    public String getPrice(){
-        return price;
-    }
-    public void setPrice(String price){
-        this.price=price;
-    }
-    public String getName(){
-        return name;
-    }
-    public void setName(String name){
-        this.name=name;
-    }
-    public String getAvatar(){
-        return avatar;
-    }
-    public void setAvatar(String avatar){
-        this.avatar=avatar;
-    }
+
     public String getUserName() {
         return userName;
     }
